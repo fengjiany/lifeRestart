@@ -63,7 +63,7 @@ class App{
             <div class="head" style="font-size: 1.6rem">天赋抽卡</div>
             <button id="random" class="mainbtn" style="top: 50%;">10连抽！</button>
             <ul id="talents" class="selectlist"></ul>
-            <button id="next" class="mainbtn" style="top:auto; bottom:0.1em">请选择3个</button>
+            <button id="next" class="mainbtn" style="top:auto; bottom:0.5em">请选择10个</button>
         </div>
         `);
 
@@ -85,8 +85,8 @@ class App{
                                 li.removeClass('selected')
                                 this.#talentSelected.delete(talent);
                             } else {
-                                if(this.#talentSelected.size==3) {
-                                    this.hint('只能选3个天赋');
+                                if(this.#talentSelected.size==9) {
+                                    this.hint('只能选10个天赋');
                                     return;
                                 }
 
@@ -188,10 +188,10 @@ class App{
             return {group, get, set};
         }
 
-        groups.CHR = getBtnGroups("颜值", 0, 10); // 颜值 charm CHR
-        groups.INT = getBtnGroups("智力", 0, 10); // 智力 intelligence INT
-        groups.STR = getBtnGroups("体质", 0, 10); // 体质 strength STR
-        groups.MNY = getBtnGroups("家境", 0, 10); // 家境 money MNY
+        groups.CHR = getBtnGroups("颜值", 100, 10); // 颜值 charm CHR
+        groups.INT = getBtnGroups("智力", 200, 10); // 智力 intelligence INT
+        groups.STR = getBtnGroups("体质", 539, 10); // 体质 strength STR
+        groups.MNY = getBtnGroups("家境", 20, 10); // 家境 money MNY
 
         const ul = propertyPage.find('#propertyAllocation');
 
